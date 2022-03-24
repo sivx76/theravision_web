@@ -25,16 +25,11 @@
                         function redirect() {
                             //alert('redirect method is run');
 
-							//testing - https://sivx76.github.io/theravision_web/redirect?access_token=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyM0IzUjYiLCJzdWIiOiI2TVdCOTMiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyYWN0IiwiZXhwIjoxNjE5NTUwNjU0LCJpYXQiOjE2MTk1MTExNTV9.y8YVh19vxccOZ_KeOsL4dauJtwnyXDqwM8GA1SECfCg&user_id=6MWB93&scope=activity&state=NA&token_type=Bearer&expires_in=39499
+							//Usually is - https://sivx76.github.io/theravision_web/redirect#access_token=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyM0IzUjYiLCJzdWIiOiI2TVdCOTMiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyYWN0IiwiZXhwIjoxNjE5NTUwNjU0LCJpYXQiOjE2MTk1MTExNTV9.y8YVh19vxccOZ_KeOsL4dauJtwnyXDqwM8GA1SECfCg&user_id=6MWB93&scope=activity&state=NA&token_type=Bearer&expires_in=39499
 
-							//Step 1: Extract the current url
-
-							//Step 2: Splice the access token
-
-							//Step 3: Add it to the URL scheme
-
-
-							const queryString = window.location.search;
+		
+							//.replace('#', '?')
+							const queryString = window.location.hash.replace('#', '?');
 							console.log(queryString);
 
 							const urlParams = new URLSearchParams(queryString);
@@ -43,10 +38,10 @@
 							console.log(token);
 
 
-							// Issue with URL parameter
+							// Issue with URL parameter - try to add with ?
 
 
-                            window.location.replace(`artwalk://${token}`);
+                            window.location.replace(`artwalk://?access_token=${token}`);
                         }
 
                         
